@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Grand Beauty Spa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #D4C4B7; /* Champagne/Beige */
+            --secondary: #5C6755; /* Muted Sage Green */
+            --dark: #2C2C2C;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garmond', serif;
+        }
+
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4C4B7; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bfaa9f; 
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4C4B7',
+                        sage: '#5C6755',
+                        charcoal: '#2C2C2C',
+                        cream: '#F9F7F2'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="serif text-3xl text-charcoal tracking-widest font-semibold uppercase">
+                        De Grand
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Home</a>
+                    <a href="#about" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">About</a>
+                    <a href="#services" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Services</a>
+                    <a href="#contact" class="px-6 py-2 bg-charcoal text-white text-sm uppercase tracking-widest hover:bg-gold transition-colors duration-300">Book Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMenu()" class="text-charcoal hover:text-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+                <a href="#home" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium hover:text-gold">Home</a>
+                <a href="#about" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium hover:text-gold">About</a>
+                <a href="#services" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium hover:text-gold">Services</a>
+                <a href="#contact" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                alt="Spa Atmosphere" 
+                class="w-full h-full object-cover"
+                onerror="this.src='https://placehold.co/1920x1080/efece6/5C6755?text=Spa+Background'"
+            >
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto text-white">
+            <span class="block text-sm md:text-base uppercase tracking-[0.3em] mb-4 animate-fade-in-up">Welcome to</span>
+            <h1 class="serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight">
+                De Grand<br>Beauty Spa
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-white/90">
+                Where elegance meets relaxation. Experience our premium treatments designed to rejuvenate your body and soul.
+            </p>
+            <a href="#services" class="inline-block px-8 py-4 bg-white text-charcoal uppercase tracking-widest text-sm hover:bg-gold hover:text-white transition-all duration-300">
+                View Treatments
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full border-2 border-gold z-0 hidden md:block"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                        alt="Interior" 
+                        class="relative z-10 w-full h-[500px] object-cover shadow-lg"
+                        onerror="this.src='https://placehold.co/800x1000/efece6/5C6755?text=Interior'"
+                    >
+                </div>
+                <div>
+                    <span class="text-gold text-sm uppercase tracking-widest font-semibold">Our Story</span>
+                    <h2 class="serif text-4xl md:text-5xl mt-2 mb-6 text-charcoal">Redefining Beauty & Wellness</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed font-light">
+                        At De Grand Beauty Spa, we believe that self-care is not just a luxury, but a necessity. Founded with a passion for excellence, our sanctuary offers a retreat from the hustle of daily life.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed font-light">
+                        Our expert therapists use only the finest products to ensure your skin glows and your mind unwinds. From classic facials to advanced body treatments, every service is tailored to your unique needs.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="w-12 h-12 rounded-full object-cover" alt="Signature">
+                        <div>
+                            <p class="serif text-xl italic text-charcoal">The De Grand Team</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold text-sm uppercase tracking-widest font-semibold">Our Menu</span>
+                <h2 class="serif text-4xl md:text-5xl mt-2 text-charcoal">Curated Treatments</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 h-80">
+                        <img 
+                            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Facials" 
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            onerror="this.src='https://placehold.co/600x800/efece6/5C6755?text=Facials'"
+                        >
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <h3 class="serif text-2xl text-charcoal mb-2 group-hover:text-gold transition-colors">Luxury Facials</h3>
+                    <p class="text-gray-500 font-light text-sm mb-4">Rejuvenate your skin with our signature hydration and anti-aging techniques.</p>
+                    <a href="#" class="text-xs uppercase tracking-widest border-b border-charcoal pb-1 group-hover:text-gold group-hover:border-gold transition-all">View Menu</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 h-80">
+                        <img 
+                            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Massage" 
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            onerror="this.src='https://placehold.co/600x800/efece6/5C6755?text=Massage'"
+                        >
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <h3 class="serif text-2xl text-charcoal mb-2 group-hover:text-gold transition-colors">Body Massages</h3>
+                    <p class="text-gray-500 font-light text-sm mb-4">Relax your muscles and mind with Swedish, Deep Tissue, or Hot Stone therapies.</p>
+                    <a href="#" class="text-xs uppercase tracking-widest border-b border-charcoal pb-1 group-hover:text-gold group-hover:border-gold transition-all">View Menu</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 h-80">
+                        <img 
+                            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Nails" 
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            onerror="this.src='https://placehold.co/600x800/efece6/5C6755?text=Nails'"
+                        >
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <h3 class="serif text-2xl text-charcoal mb-2 group-hover:text-gold transition-colors">Nail Care</h3>
+                    <p class="text-gray-500 font-light text-sm mb-4">Premium manicures and pedicures using high-quality polishes and gels.</p>
+                    <a href="#" class="text-xs uppercase tracking-widest border-b border-charcoal pb-1 group-hover:text-gold group-hover:border-gold transition-all">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo / Quote Section -->
+    <section class="py-24 bg-sage relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <i class="fas fa-quote-left text-4xl text-white/50 mb-6"></i>
+            <h3 class="serif text-3xl md:text-5xl text-white leading-tight mb-8">
+                "Relaxation is the stepping stone to tranquility."
+            </h3>
+            <a href="#contact" class="inline-block border border-white text-white px-8 py-3 uppercase text-sm tracking-widest hover:bg-white hover:text-sage transition-all duration-300">
+                Book Your Escape
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <section id="contact" class="bg-charcoal text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="serif text-2xl tracking-widest font-semibold uppercase block mb-6">
+                        De Grand
+                    </a>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">
+                        Your destination for beauty, wellness, and luxury. Visit us to experience the grand difference.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/degrand.beautyspa?igsh=ZmZ4ZGplMTFxbGM0" target="_blank" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-charcoal hover:border-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-charcoal hover:border-white transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-charcoal hover:border-white transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="serif text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm font-light text-gray-400">
+                        <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Gift Cards</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="serif text-lg mb-6">Opening Hours</h4>
+                    <ul class="space-y-3 text-sm font-light text-gray-400">
+                        <li class="flex justify-between"><span>Mon - Fri</span> <span>09:00 - 18:00</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>09:00 - 17:00</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="serif text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-sm font-light text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-gold"></i>
+                            <span>12 Palm Blvd, Umhlanga</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-gold"></i>
+                            <span>031 5362 909</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-gold"></i>
+                            <span>info@degrandspa.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+                <p>&copy; 2024 De Grand Beauty Spa. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for elegance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Mobile Menu & Scroll Effect -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-white/90', 'bg-white');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-white', 'bg-white/90');
+            }
+        });
+    </script>
+</body>
+</html>
